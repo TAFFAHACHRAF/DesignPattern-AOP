@@ -1,13 +1,14 @@
 package DecoratorPattern;
 
 public class NutyIcecreem extends IcecreemDecorator{
-
     public NutyIcecreem(Icecreem specialIcecreem) {
         super(specialIcecreem);
     }
 
+    @Override
     public void makeIcecreem() {
-        super.makeIcecreem();
-        System.out.println("Nuty");
+        System.out.println("Login");
+        specialIcecreem.makeIcecreem();
+        System.out.println("Logout");
     }
 }

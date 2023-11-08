@@ -1,4 +1,7 @@
 import DecoratorPattern.BaseIcecreem;
+import DecoratorPattern.DbConnection.AbstractDbConnection;
+import DecoratorPattern.DbConnection.BasicImplementation;
+import DecoratorPattern.DbConnection.LogConnection;
 import DecoratorPattern.Icecreem;
 import DecoratorPattern.NutyIcecreem;
 import ObserverPattern.ObservableImpl;
@@ -12,7 +15,7 @@ import TD1.exercice1.squelette.TemplateImpl1;
 import TD1.exercice1.squelette.TemplateImpl2;
 
 public class App {
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException {
         /*Directory directory=new Directory();
         directory.addComposant(new File());
         for(Composant c : directory.getComposants()){
@@ -39,9 +42,18 @@ public class App {
         for(Figure figure: group.getFigures()){
             figure.show();
         }*/
-        Template template=new TemplateImpl1();
+        /*Template template=new TemplateImpl1();
         template.showDate();
         template=new TemplateImpl2();
-        template.showDate();
+        template.showDate();*/
+        /*Icecreem baseIcecreem=new BaseIcecreem();
+        baseIcecreem.makeIcecreem();
+        System.out.println("---------------------");
+        baseIcecreem=new NutyIcecreem(new BaseIcecreem());
+        baseIcecreem.makeIcecreem();*/
+        AbstractDbConnection abstractDbConnection=new BasicImplementation();
+        abstractDbConnection.connect();
+        abstractDbConnection=new LogConnection(abstractDbConnection);
+        abstractDbConnection.connect();
     }
 }
