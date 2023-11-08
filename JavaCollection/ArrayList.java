@@ -1,7 +1,10 @@
 package JavaCollection;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArrayList<T> implements List<T> {
-    private T[] items = (T[]) new Object[100]; // Create an Object array and cast it to T[]
+    private T[] items = (T[]) new Object[DEFAULT_CAPACITY]; // Create an Object array and cast it to T[]
     private static int size=0;
 
     @Override
@@ -29,6 +32,10 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public void add(T o) {
+        if(size == items.length){
+            int newCapacity=size*2;
+            items= Arrays.copyOf(items,newCapacity);
+        }
         items[size()] = o;
         size++;
     }

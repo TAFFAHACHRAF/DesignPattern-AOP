@@ -1,7 +1,6 @@
 package TemplatePattern;
 
 public class TemplateImpl1 extends Template{
-
     @Override
     public int calculateX() {
         return (int) (Math.random() % 85 + 74 / 7 + 0.5 * Math.random());
