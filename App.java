@@ -1,3 +1,6 @@
+import AdapterPattern.Adapter;
+import AdapterPattern.Standard;
+import AdapterPattern.StandartImpl;
 import DecoratorPattern.BaseIcecreem;
 import DecoratorPattern.DbConnection.AbstractDbConnection;
 import DecoratorPattern.DbConnection.BasicImplementation;
@@ -51,9 +54,13 @@ public class App {
         System.out.println("---------------------");
         baseIcecreem=new NutyIcecreem(new BaseIcecreem());
         baseIcecreem.makeIcecreem();*/
-        AbstractDbConnection abstractDbConnection=new BasicImplementation();
+        /*AbstractDbConnection abstractDbConnection=new BasicImplementation();
         abstractDbConnection.connect();
         abstractDbConnection=new LogConnection(abstractDbConnection);
-        abstractDbConnection.connect();
+        abstractDbConnection.connect();*/
+        Standard standard=new StandartImpl();
+        System.out.println(standard.calculateDistance(10,10,20,20));
+        standard=new Adapter();
+        System.out.println(standard.calculateDistance(10,10,20,20));
     }
 }
