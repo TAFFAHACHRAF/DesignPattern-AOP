@@ -58,9 +58,13 @@ public class App {
         abstractDbConnection.connect();
         abstractDbConnection=new LogConnection(abstractDbConnection);
         abstractDbConnection.connect();*/
-        Standard standard=new StandartImpl();
+        /*Standard standard=new StandartImpl();
         System.out.println(standard.calculateDistance(10,10,20,20));
         standard=new Adapter();
-        System.out.println(standard.calculateDistance(10,10,20,20));
+        System.out.println(standard.calculateDistance(10,10,20,20));*/
+        ImmutableExample immutableExample=new ImmutableExample();
+        //immutableExample.afficher();
+        immutableExample.getList().add(784);
+        immutableExample.afficher();
     }
 }
