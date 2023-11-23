@@ -1,4 +1,4 @@
-package Builder;
+package BuilderPattern;
 
 public enum AccountStatus {
     SAVING_ACCOUNT,

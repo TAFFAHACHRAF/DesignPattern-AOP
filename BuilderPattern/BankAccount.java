@@ -1,11 +1,11 @@
-package Builder;
+package BuilderPattern;
 
-public class BankAccount {
+public class BankAccount implements Cloneable{
     private int accountId;
     private String currensy;
     private AccountStatus accountStatus;
     private double balance;
-
+    private Customer customer;
     public int getAccountId() {
         return accountId;
     }
@@ -36,6 +36,14 @@ public class BankAccount {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public BankAccount() { }
@@ -73,5 +81,11 @@ public class BankAccount {
         public BankAccount build(){
             return bankAccount;
         }
+    }
+    @Override
+    public BankAccount clone() throws CloneNotSupportedException {
+        BankAccount bankAccount=(BankAccount) super.clone();
+        bankAccount.setCustomer(this.customer.clone());
+        return bankAccount;
     }
 }
