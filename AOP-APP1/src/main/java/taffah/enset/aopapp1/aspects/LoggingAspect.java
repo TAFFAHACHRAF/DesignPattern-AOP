@@ -13,7 +13,7 @@ import java.util.Date;
 @EnableAspectJAutoProxy
 public class LoggingAspect {
     //@Around("execution(* metier.*.*(..))")
-    @Around("@annotation(aspects.Log)")
+    @Around("@annotation(Log)")
     public Object log(ProceedingJoinPoint joinPoint) {
         Object result=null;
         Date d1 = new Date();
