@@ -1,7 +1,7 @@
 package ProxyPattern;
 
 public class ExpensiveObjectProxy extends ExpensiveObject{
-    ExpensiveObject expensiveObject=new ExpensiveObjectImpl();
+    ExpensiveObjectImpl expensiveObject=new ExpensiveObjectImpl();
     @Override
     protected void process() {
         System.out.println("Vérification");
